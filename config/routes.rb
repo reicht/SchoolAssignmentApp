@@ -1,32 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'teachers/index'
-
-  get 'teachers/show'
-
-  get 'teachers/new'
-
-  get 'teachers/create'
-
-  get 'teachers/destroy'
-
-  get 'students/index'
-
-  get 'students/show'
-
-  get 'students/new'
-
-  get 'students/create'
-
-  get 'students/destroy'
-
-# namespace :api do
-
+namespace :api do
     resources :schools do
       resources :teachers
       resources :students
     end
-# end
+end
+resources :schools do
+  resources :teachers
+  resources :students
+end
   root 'schools#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

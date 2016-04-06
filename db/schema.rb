@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405185745) do
+ActiveRecord::Schema.define(version: 20160406182628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "schools", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",           null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "students_count"
+    t.integer  "teachers_count"
   end
 
   create_table "students", force: :cascade do |t|
@@ -34,10 +36,11 @@ ActiveRecord::Schema.define(version: 20160405185745) do
   add_index "students", ["teacher_id"], name: "index_students_on_teacher_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",           null: false
     t.integer  "school_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "students_count"
   end
 
   add_index "teachers", ["school_id"], name: "index_teachers_on_school_id", using: :btree
