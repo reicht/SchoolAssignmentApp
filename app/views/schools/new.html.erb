@@ -1,0 +1,14 @@
+<h1>Schools#new</h1>
+<p>Find me in app/views/schools/new.html.erb</p>
+<hr />
+<div class='col-md-offset-2 col-md-6'>
+  <%= form_for(@school, class: 'form') do |f| %>
+
+    <div class='row'>
+      <div class='col-md-12'>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<h1>Students#index</h1>
+<p>Find me in app/views/students/index.html.erb</p>
+<% @students.each do |student| %>
+  <div class='col-md-offset-2 col-md-6'>
+    <%= link_to student.name, school_student_path(student.id, student.school.id), class: 'btn btn-default' %>
+  </div>
+<% end %>
+<div class = "col-md-offset-2 col-md-6">
+<%= paginate @students %>
+</div>

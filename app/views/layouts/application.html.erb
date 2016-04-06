@@ -8,7 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+<nav class='navbar navbar-default'>
+  <ul class="nav navbar-nav navbar">
+    <li>
+      <%= link_to "Return to Directory", schools_path, class: "btn btn-default" %>
+    </li>
+  </ul>
+</nav>
+
+<div class='container'>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+
+  <%= yield %>
+</div>
 
 </body>
 </html>
