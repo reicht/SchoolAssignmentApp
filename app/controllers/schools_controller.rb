@@ -15,7 +15,7 @@ class SchoolsController < ApplicationController
     @school = School.new(school_params)
 
     if @school.save
-      redirect_to root_path
+      redirect_to @school
     else
       render :new
     end

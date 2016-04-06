@@ -24,10 +24,32 @@ class TeachersController < ApplicationController
     end
   end
 
+  def edit
+    @teacher = get_teacher
+    @school = School.find(params.fetch(:school_id))
+
+  end
+
   def update
+    @teacher = get_teacher
+    @school = School.find(params.fetch(:school_id))
+
+    if @teacher.update(teacher_params)
+      redirect_to school_teacher_path(@school, @teacher)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @teacher = get_teacher
+    school = @teacher.school
+
+    if @teacher.destroy
+      redirect_to school_path_url(school)
+    else
+      redirect_to :back
+    end
   end
 
 

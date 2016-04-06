@@ -1,5 +1,5 @@
-<h1>Students#new</h1>
-<p>Find me in app/views/students/new.html.erb</p>
+<h1>Add a New Student</h1>
+<h2> Current School: <%=@school.name%> </h2>
 <hr />
 <div class='col-md-offset-2 col-md-6'>
   <%= form_for([@school, @student], class: 'form') do |f| %>

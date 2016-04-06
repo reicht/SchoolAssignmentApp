@@ -1,8 +1,11 @@
-<h1>Teachers#index</h1>
-<p>Find me in app/views/teachers/index.html.erb</p>
+<h1>Teachers on Staff</h1>
+<%= link_to "To Current School", school_url(@teachers.first.school.id), class: 'btn btn-default' %>
+<hr>
+<h2> Current Location: <%=@teachers.first.school.name%></h2>
+<hr>
 <% @teachers.each do |teacher| %>
   <div class='col-md-offset-2 col-md-6'>
-    <%= link_to teacher.name, school_teacher_path(teacher.id, teacher.school.id), class: 'btn btn-default' %>
+    <%= link_to teacher.name, school_teacher_path(teacher.school.id, teacher.id), class: 'btn btn-default' %>
   </div>
 <% end %>
 <div class = "col-md-offset-2 col-md-6">

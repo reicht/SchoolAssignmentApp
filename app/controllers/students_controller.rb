@@ -25,13 +25,16 @@ class StudentsController < ApplicationController
 
   def edit
     @student = get_student
+    @school = School.find(params.fetch(:school_id))
+
   end
 
   def update
     @student = get_student
+    @school = School.find(params.fetch(:school_id))
 
     if @student.update(student_params)
-      redirect_to @student
+      redirect_to school_student_path(@school, @student)
     else
       render :edit
     end

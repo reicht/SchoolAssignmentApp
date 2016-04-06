@@ -1,14 +1,20 @@
-<h1>Add a New Teacher</h1>
+<h1>Editing a Student</h1>
 <h2> Current School: <%=@school.name%> </h2>
 <hr />
 <div class='col-md-offset-2 col-md-6'>
-  <%= form_for([@school, @teacher], class: 'form') do |f| %>
+  <%= form_for([@school, @student], class: 'form') do |f| %>
 
     <div class='row'>
       <div class='col-md-12'>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
         <%= f.hidden_field :school_id, :value => @school.id %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-12'>
+        <%= f.label :teacher_id %>
+        <%= f.collection_select :teacher_id, @school.teacher ,:id,:name, include_blank: true %>
       </div>
     </div>
     <div class='row'>

@@ -1,5 +1,7 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
-<h2> <%=@student.name%></h2>
+<h1>Viewing Student Record</h1>
+<%= link_to "To Current School", school_url(@student.school.id), class: 'btn btn-default' %>
 <hr>
-<%=@student.teacher.name%>
+<h2> <%=@student.name%></h2>
+<%= link_to "Edit Student", edit_school_student_path(@student.school.id, @student), class: 'btn btn-default' %>
+<hr>
+Studying under: <%=@student.teacher.name%>
