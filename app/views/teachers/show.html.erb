@@ -4,6 +4,8 @@
 <h2><%=@teacher.name%></h2>
 <%= link_to "Edit Teacher", edit_school_teacher_path(@teacher.school.id, @teacher), class: 'btn btn-default' %>
 <hr>
+<%= link_to "Delete Teacher Record", school_teacher_path(@teacher.school.id, @teacher), method: :DELETE, data: { confirm: "Confirm Teacher Deletion?" }, class: 'btn btn-danger' %>
+<hr>
 Current Students:<br>
 <% @students.each do |student| %>
   <div class='col-md-offset-2 col-md-6'>

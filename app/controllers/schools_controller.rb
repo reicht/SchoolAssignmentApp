@@ -35,6 +35,16 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def destroy
+    @school = get_school
+
+    if @school.destroy
+      redirect_to root_path
+    else
+      redirect_to :back
+    end
+  end
+
   private
   def get_school
     School.find(params.fetch(:id))

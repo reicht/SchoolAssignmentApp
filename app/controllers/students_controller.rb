@@ -41,6 +41,14 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    @student = get_student
+    school = @student.school
+
+    if @student.destroy
+      redirect_to school_path(school)
+    else
+      redirect_to :back
+    end
   end
 
   private

@@ -46,7 +46,7 @@ class TeachersController < ApplicationController
     school = @teacher.school
 
     if @teacher.destroy
-      redirect_to school_path_url(school)
+      redirect_to school_path(school)
     else
       redirect_to :back
     end

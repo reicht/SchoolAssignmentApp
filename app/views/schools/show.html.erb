@@ -2,6 +2,8 @@
 <div class= "col-md-offset-2 col-md-6">
   <%= @school.name%> || <%= link_to "Edit School", edit_school_path(@school), class: 'btn btn-default' %>
   <hr>
+  <%= link_to "Purge Campus Records", school_path(@school), method: :DELETE, data: { confirm: "Confirm Campus Purge(All Teachers and Students included)?" }, class: 'btn btn-danger' %>
+  <hr>
   <%= link_to "New Teacher", new_school_teacher_path(@school), class: 'btn btn-default' %>
   <%= link_to "New Student", new_school_student_path(@school), class: 'btn btn-default' %>
   <hr>

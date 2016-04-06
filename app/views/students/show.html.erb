@@ -4,4 +4,6 @@
 <h2> <%=@student.name%></h2>
 <%= link_to "Edit Student", edit_school_student_path(@student.school.id, @student), class: 'btn btn-default' %>
 <hr>
+<%= link_to "Delete Student Record", school_student_path(@student.school.id, @student), method: :DELETE, data: { confirm: "Confirm Student Deletion?" }, class: 'btn btn-danger' %>
+<hr>
 Studying under: <%=@student.teacher.name%>
