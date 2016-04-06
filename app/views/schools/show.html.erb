@@ -1,9 +1,9 @@
-<h1>Schools#show</h1>
-<p>Find me in app/views/schools/show.html.erb</p>
+
 <div class= "col-md-offset-2 col-md-6">
-  <%= @school.name%>
+  <%= @school.name%> || <%= link_to "Edit School", edit_school_path(@school), class: 'btn btn-default' %>
   <hr>
   <%= link_to "New Teacher", new_school_teacher_path(@school), class: 'btn btn-default' %>
+  <%= link_to "New Student", new_school_student_path(@school), class: 'btn btn-default' %>
   <hr>
   <%= link_to "Teachers", school_teachers_path(@school), class: 'btn btn-default' %>: <%=@school.teacher.count%>  |
   <%= link_to "Students", school_students_path(@school), class: 'btn btn-default' %>:  <%=@school.student.count%>

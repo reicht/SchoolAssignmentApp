@@ -4,24 +4,37 @@ class StudentsController < ApplicationController
   end
 
   def show
+    @student = get_student
   end
 
   def new
     @student = Student.new
-    @school = School.where(id: params[:school_id])
+    @school = School.find(params.fetch(:school_id))
   end
 
   def create
     @student = Student.new(student_params)
+    @school = School.find(params.fetch(:school_id))
 
     if @student.save
-      redirect_to :back
+      redirect_to school_student_path(@school, @student)
     else
       render :new
     end
   end
 
+  def edit
+    @student = get_student
+  end
+
   def update
+    @student = get_student
+
+    if @student.update(student_params)
+      redirect_to @student
+    else
+      render :edit
+    end
   end
 
   def destroy

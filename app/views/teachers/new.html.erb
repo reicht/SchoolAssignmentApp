@@ -2,13 +2,17 @@
 <p>Find me in app/views/teachers/new.html.erb</p>
 <hr />
 <div class='col-md-offset-2 col-md-6'>
-  <%= form_for(@teacher, class: 'form') do |f| %>
+  <%= form_for([@school, @teacher], class: 'form') do |f| %>
 
     <div class='row'>
       <div class='col-md-12'>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
+        <%= f.hidden_field :school_id, :value => @school.id %>
       </div>
+    </div>
+    <div class='row'>
+      <%= f.submit %>
     </div>
   <% end %>
 </div>

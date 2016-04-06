@@ -8,6 +8,7 @@
       <div class='col-md-12'>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
+        <%= f.hidden_field :school_id, :value => @school.id %>
       </div>
     </div>
     <div class='row'>
@@ -15,6 +16,9 @@
         <%= f.label :teacher_id %>
         <%= f.collection_select :teacher_id, @school.teacher ,:id,:name, include_blank: true %>
       </div>
+    </div>
+    <div class='row'>
+      <%= f.submit %>
     </div>
   <% end %>
 </div>

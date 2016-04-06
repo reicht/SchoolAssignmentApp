@@ -10,13 +10,15 @@ class TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
+    @school = School.find(params.fetch(:school_id))
   end
 
   def create
     @teacher = Teacher.new(teacher_params)
+    @school = School.find(params.fetch(:school_id))
 
     if @teacher.save
-      redirect_to :back
+      redirect_to school_teacher_path(@school, @teacher)
     else
       render :new
     end
@@ -34,7 +36,7 @@ class TeachersController < ApplicationController
     Teacher.find(params.fetch(:id))
   end
 
-  def student_params
+  def teacher_params
     params.require(:teacher).permit(:name, :school_id)
   end
 end

@@ -21,6 +21,20 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def edit
+    @school = get_school
+  end
+
+  def update
+    @school = get_school
+
+    if @school.update(school_params)
+      redirect_to @school
+    else
+      render :edit
+    end
+  end
+
   private
   def get_school
     School.find(params.fetch(:id))
