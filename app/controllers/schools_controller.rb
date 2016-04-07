@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+skip_before_action :authenticate_user, only: [:index]
+
   def index
     @schools = School.page params[:page]
   end

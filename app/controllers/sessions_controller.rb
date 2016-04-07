@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user
+
 
   def sign_in
   end
@@ -11,7 +13,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "You have signed in."
       redirect_to root_path
     else
-      flash[:alert] = "No records match that Username and Password combination."
+      flash.now[:alert] = "No records match that Username and Password combination."
       render :sign_in
     end
   end

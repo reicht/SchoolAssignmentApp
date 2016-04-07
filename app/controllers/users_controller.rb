@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  #TODO: add auth lockouts skip_before_action :authenticate_user
+  skip_before_action :authenticate_user
+
 
   def new
     @user = User.new
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
+      flash.now[:notice] = "Failed to make account."
       render :new
     end
   end
