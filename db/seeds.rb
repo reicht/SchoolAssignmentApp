@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-rand(26..30).times do
+rand(26..29).times do
   place = School.create(name: Faker::University.name)
-  rand(15..30).times do
+  rand(9..21).times do
     person = Teacher.create(name: Faker::Name.prefix + " " + Faker::Name.name, school_id: place.id)
-    rand(18..32).times do
+    rand(12..23).times do
       Student.create(name: Faker::Name.name, teacher_id: person.id, school_id: place.id )
     end
   end
