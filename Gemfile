@@ -51,6 +51,7 @@ end
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'kaminari'
 gem 'faker'
+gem 'rails_admin'
 
 group :production do
   gem 'rails_12factor'
