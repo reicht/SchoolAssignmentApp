@@ -17,10 +17,16 @@
 //= require bootstrap-sprockets
 
 var ready = function () {
+    var counter_pounter = 0;
 
     $("#clicker").on("click", function () {
         $("#target").toggleClass("fancy-spancy");
         console.log("Boink!")
+    });
+
+    $("h1").on("click", function () {
+        counter_pounter ++;
+        console.log("There have been " + counter_pounter + " pokes.")
     });
 
     console.log("It loaded brah")

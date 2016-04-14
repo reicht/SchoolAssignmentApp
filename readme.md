@@ -1,6 +1,6 @@
 ### Rails School Application
 
-Explorer mode would appear to be complete, deployed to Heroku at the following:
+Adventurer finished last second, deployed to Heroku at the following:
 
 https://school-assignment-applet.herokuapp.com/
 
