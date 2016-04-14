@@ -20,7 +20,7 @@ var ready = function () {
     var counter_pounter = 0;
 
     $("#clicker").on("click", function () {
-        $("#target").toggleClass("fancy-spancy");
+        $(".target").first().toggleClass("fancy-spancy");
         console.log("Boink!")
     });
 
