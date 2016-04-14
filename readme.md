@@ -2,7 +2,12 @@
 
 Explorer mode would appear to be complete, deployed to Heroku at the following:
 
-https://school-assignment-applet.herokuapp.com/schools
+https://school-assignment-applet.herokuapp.com/
+
+Java is ugly but functional.  Give me sleep.
+
+
+#####OLD NOTES::
 
 Can CRUD all the students, campuses, and teachers you want.  Navigation is rough
 but functional, creation and edit pages do not feature a return to campus button.
