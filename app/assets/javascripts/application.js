@@ -13,5 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
 //= require bootstrap-sprockets
+
+var ready = function () {
+
+    $("#clicker").on("click", function () {
+        $("#target").toggleClass("fancy-spancy");
+        console.log("Boink!")
+    });
+
+    console.log("It loaded brah")
+};
+
+$(document).ready(ready);
+$(document).on("page:load", ready);
+
+//= require_tree .

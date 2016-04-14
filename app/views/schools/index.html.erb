@@ -1,10 +1,13 @@
 <h1>Registered Schools</h1>
+<div id = "clicker">
+  Brew Some Java
+</div>
 <% if signed_in? %>
   <%= link_to "Register a New Campus", new_school_url, class: 'btn btn-default btn-compliment' %>
 <% end %>
 <hr>
 <% @schools.each do |school| %>
-  <div class='col-md-offset-2 col-md-6'>
+  <div class='col-md-offset-2 col-md-6' id = "target">
     <%= link_to school.name, school, class: 'btn btn-default btn-main' %>
   </div>
 <% end %>
